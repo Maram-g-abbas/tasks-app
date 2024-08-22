@@ -25,5 +25,5 @@ A few resources to get you familiar with the app ui:
 please download the android application to your mobile application
 to be able to get the full experience
 
-[APK](https://github.com/Maram-g-abbas/tasks-app/blob/main/android/app/release/app-release.apk)
+[APK](https://github.com/Maram-g-abbas/tasks-app/blob/main/lib/app-release.apk)
 
