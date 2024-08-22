@@ -20,3 +20,10 @@ A few resources to get you familiar with the app ui:
 - [screen 4](https://github.com/Maram-g-abbas/tasks-app/blob/main/screenshots/screen%205.jpg)
 - [screen 5](https://github.com/Maram-g-abbas/tasks-app/blob/main/screenshots/screen%206.jpg)
 
+## APK
+
+please download the android application to your mobile application
+to be able to get the full experience
+
+[APK](https://github.com/Maram-g-abbas/tasks-app/blob/main/android/app/release/app-release.apk)
+
