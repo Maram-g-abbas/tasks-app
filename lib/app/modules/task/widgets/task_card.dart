@@ -13,7 +13,6 @@ class TaskCard extends StatelessWidget {
         return ListTile(
           leading: Checkbox(value: task.status == 1? true : false , onChanged: (bool? value) {controller.onChanged(value!,task);},),
           title: Text(task.title),
-          subtitle: const Text('user'),
         );
       }
     );

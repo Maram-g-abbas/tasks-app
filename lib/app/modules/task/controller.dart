@@ -68,14 +68,7 @@ class TaskController extends GetxController {
   Future<List<Task>> fetchTasks(index) async {
     var projectID = projects[index].id;
     var tasks = await TaskServices.fetchTasks(projectID);
-    // final random = Random();
-    // this.tasks(tasks);
     return tasks;
-    //
-    // this.projects.forEach((project) {
-    //   final randomIndex = random.nextInt(colors.length);
-    //   project.color = colors[randomIndex].toHex();
-    // });
   }
 
   bool addTask(Task task){
@@ -87,6 +80,8 @@ class TaskController extends GetxController {
     update();
     return true;
   }
+
+
 }
 
 
