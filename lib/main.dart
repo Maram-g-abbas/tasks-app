@@ -1,30 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'app/core/bindings/project_binding.dart';
-import 'app/core/routes.dart';
-import 'app/modules/project/view.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:tasks/providers/taskprovider.dart';
+import 'package:provider/provider.dart';
+import 'core/utils/thems.dart';
+import 'view/screens/home.dart';
 
-void main() async{
-  await GetStorage.init();
-  runApp(const MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => TaskProvider()),
+        ChangeNotifierProvider(create: (context) => ThemeProvider()), // Add your theme provider here
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  GetMaterialApp(
-      title: 'Task',
-      home: const ProjectPage(),
-      initialRoute: AppPages.INITIAL,
-      getPages: AppPages.routes,
-      initialBinding: ProjectBinding(),
-
-      builder: EasyLoading.init(),
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return MaterialApp(
+      theme: themeProvider.currentTheme,
+      darkTheme: themeProvider.darkTheme,
+      themeMode: themeProvider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      home: Home(),
     );
   }
 }
+
